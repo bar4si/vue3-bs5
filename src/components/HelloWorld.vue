@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
+
+
     <button
       type="button"
       class="btn btn-lg btn-danger"
@@ -93,7 +95,11 @@
 </template>
 
 <script>
-import { Tooltip,Popover,Toast } from "bootstrap/dist/js/bootstrap.bundle.min.js";
+import {
+  Tooltip,
+  Popover,
+  
+} from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // import { Popover } from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -101,6 +107,7 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
+    toasts: Object,
   },
   // components: {
   //   Tooltip,
@@ -122,11 +129,7 @@ export default {
     });
     console.log(popoverList);
 
-    var toastElList = [].slice.call(document.querySelectorAll(".toast"));
-    var toastList = toastElList.map(function (toastEl) {
-      new Toast(toastEl);
-    });
-     console.log(toastList);
+  
   },
 };
 </script>
